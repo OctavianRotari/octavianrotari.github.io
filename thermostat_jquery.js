@@ -1,10 +1,11 @@
  $(document).ready(function() {
    var thermostat = new Thermostat();
    var temperature;
-   var country;
-   var city;
+   var country ;
+   var city = "London";
    var weatherdesc;
-   var setCountry;
+   var setCountry = 'uk';
+   localWeather();
    updateTemp();
 
    $("#minus_button").click(function() {
