@@ -48,8 +48,17 @@
    function setProgress(progress) {
      var progressBarWidth = progress * $(".container").width();
      $(".progressbar").width(progressBarWidth);
+     var color = "red"
+     $(".progressbar").css('background-color',setColor());
      $("#Ttext").html(thermostat.temperature + '\xB0' + 'C');
    }
+
+   function setColor() {
+    if(thermostat.tempUsage() === "low usage") { return 'blue'}
+    if(thermostat.tempUsage() === "high usage") { return 'red'}
+    return 'green';
+   }
+
 
    function updateTemp() {
      $('#temperature').text('Temperature: ' + thermostat.temperature);
