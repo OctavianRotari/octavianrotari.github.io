@@ -7,74 +7,35 @@
 </head>
 
 <body style="text-align: center">
-  <div id="all">
-    <link rel="stylesheet" href="style.css">
-    <script src="src/Thermostat.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
-    <div id='button'>
-      <button id="minus_button" type="button">-</button>
-      <button id="plus_button" type="button">+</button>
-    </div>
-    <div class="container">
-      <div class="progressbar">
-        <span id='Ttext'></span>
-      </div>
-    </div>
-    <br>
-    <button id="resetButton" type="button">Reset</button>
-    <br>
+  <link rel="stylesheet" href="style.css">
+  <script src="src/Thermostat.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+  <script src="thermostat_jquery.js"></script>
+  <div id='button'>
+    <button id="minus_button" type="button">-</button>
+    <button id="plus_button" type="button">+</button>
   </div>
-    <div class="PSMswitch">
-      <input type="checkbox" name="PSMswitch" class="PSMswitch-checkbox" id="myPSMswitch" checked>
-      <label class="PSMswitch-label" for="myPSMswitch">
-        <span class="PSMswitch-inner"></span>
-        <span class="PSMswitch-switch"></span>
-      </label>
+  <div class="container">
+    <div class="progressbar">
+      <span id='Ttext'></span>
     </div>
+  </div>
+  <br>
+  <button id="resetButton" type="button">Reset</button>
+  <br>
+  </div>
+  <div class="PSMswitch">
+    <input type="checkbox" name="PSMswitch" class="PSMswitch-checkbox" id="myPSMswitch" checked>
+    <label class="PSMswitch-label" for="myPSMswitch">
+      <span class="PSMswitch-inner"></span>
+      <span class="PSMswitch-switch"></span>
+    </label>
+  </div>
+  <div id="Local temp"></div>
+  <ul class="my-new-list">
+    <li id=></li>
+  </ul>
 </body>
-<script>
-  var thermostat = new Thermostat()
-  $(document).ready(function() {
-
-    updateTemp();
-
-    $("#minus_button").click(function() {
-      thermostat.down()
-      updateTemp();
-      $(this).effect("pulsate", {
-        times: 0
-      }, 50);
-    });
-
-    $("#plus_button").click(function() {
-      thermostat.up()
-      updateTemp();
-      $(this).effect("pulsate", {
-        times: 0
-      }, 50);
-    });
-
-    $("#resetButton").click(function() {
-      thermostat.resetTemperature();
-      updateTemp();
-    })
-    $("#myPSMswitch").change(function() {
-      thermostat.powerSavingSwitch();
-      updateTemp();
-    })
-
-    function setProgress(progress) {
-      var progressBarWidth = progress * $(".container").width();
-      $(".progressbar").width(progressBarWidth);
-      $("#Ttext").html(thermostat.temperature + '\xB0' + 'C');
-    }
-
-    function updateTemp() {
-      $('#temperature').text('Temperature: ' + thermostat.temperature)
-      setProgress(thermostat.temperature / 32)
-    }
-  })
-</script>
 
 </html>
