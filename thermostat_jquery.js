@@ -27,6 +27,8 @@
      updateTemp();
    });
 
+
+
    function setProgress(progress) {
      var progressBarWidth = progress * $(".container").width();
      $(".progressbar").width(progressBarWidth);
@@ -45,7 +47,13 @@
      var location = url.location('London','uk');
      $.getJSON(location, function(data){
       var temperature = data.main.temp;
-
+      var weatherdesc = data.weather[0].description;
+      var country = data.sys.country;
+      var city = data.name;
+      $('#location').text(country +": " + city);
+      $('#weather').text(weatherdesc);
+      $('#temp').text(Math.round(temperature-273.15) + " Celcius");
+      console.log(temperature,weatherdesc,country,city);
      });
    }
  });
