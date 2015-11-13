@@ -13,38 +13,42 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
   <script src="thermostat_jquery.js"></script>
   <script src="liveTemp.js"></script>
-  <div id='button'>
-    <button id="minus_button" type="button">-</button>
-    <button id="plus_button" type="button">+</button>
-  </div>
-  <div class="container">
-    <div class="progressbar">
-      <span id='Ttext'></span>
+  <div id="thermostat">
+    <div id='button_minus'>
+      <button id="minus_button" type="button">-</button>
     </div>
-  </div>
-  <br>
-  <button id="resetButton" type="button">Reset</button>
-  <br>
+    <div id="button_plus">
+      <button id="plus_button" type="button">+</button>
+    </div>
+    <div class="container">
+      <div class="progressbar">
+        <span id='Ttext'></span>
+      </div>
+    </div>
+    <br>
+    <button id="resetButton" type="button">Reset</button>
+    <br>
   </div>
   <div id='switchButton'>
-  <div class="PSMswitch">
-    <input type="checkbox" name="PSMswitch" class="PSMswitch-checkbox" id="myPSMswitch" checked>
-    <label class="PSMswitch-label" for="myPSMswitch">
-      <span class="PSMswitch-inner"></span>
-      <span class="PSMswitch-switch"></span>
-    </label>
+    <div class="PSMswitch">
+      <input type="checkbox" name="PSMswitch" class="PSMswitch-checkbox" id="myPSMswitch" checked>
+      <label class="PSMswitch-label" for="myPSMswitch">
+        <span class="PSMswitch-inner"></span>
+        <span class="PSMswitch-switch"></span>
+      </label>
+    </div>
   </div>
   </div>
+  <div id="Local">
   <form>
     <input id="city" type="text" placeholder="City name">
     <input id="country" type="text" placeholder="County name">
     <button id="buttonPos" type="button" name="localTemp"> Show weather </button>
   </form>
-  <div id="Local">
     <ul>
-    <li id='location'></li>
-    <li id='temp'></li>
-    <li id='weather'></li>
+      <li id='location'></li>
+      <li id='temp'></li>
+      <li id='weather'></li>
     </ul>
   </div>
 </body>

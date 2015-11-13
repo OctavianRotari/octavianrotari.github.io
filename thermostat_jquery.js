@@ -48,7 +48,6 @@
    function setProgress(progress) {
      var progressBarWidth = progress * $(".container").width();
      $(".progressbar").width(progressBarWidth);
-     var color = "red"
      $(".progressbar").css('background-color',setColor());
      $("#Ttext").html(thermostat.temperature + '\xB0' + 'C');
    }

@@ -1,4 +1,26 @@
+body {
+  background-image: url('./images/rain.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#Local {
+  width: 320px;
+  margin: 0px auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
 
+#buttonPos {
+  margin-top: 20px;
+}
+
+#thermostat {
+  width: 320px;
+  margin: 20px auto;
+}
+#button_minus {
+  float: left;
+}
 #minus_button {
   background: #3498db;
   background-image: linear-gradient(to bottom, #3498db, #2980b9);
@@ -10,7 +32,6 @@
   border: solid #1f628d 3px;
   width: 160px;
 }
-
 #minus_button:hover {
   background: #3cb0fd;
   background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
@@ -20,18 +41,16 @@
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
 }
-
 #plus_button {
   background: #d92955;
   border-top-right-radius: 47px;
   font-family: Arial;
   color: #ffffff;
   font-size: 20px;
-  padding: 10px 0px 10px 0px;
+  padding: 10px 0px;
   border: solid #8c1f1f 3px;
   width: 160px;
 }
-
 #plus_button:hover {
   background: #fc3c5c;
   background-image: -webkit-linear-gradient(top, #fc3c5c, #eb2143);
@@ -41,7 +60,6 @@
   background-image: linear-gradient(to bottom, #fc3c5c, #eb2143);
   text-decoration: none;
 }
-
 #resetButton {
   background-image: linear-gradient(to bottom, #F1F1F1, #F1F1F1);
   border-radius: 47px;
@@ -53,112 +71,140 @@
   padding: 10px 20px 10px 20px;
   border: solid #5A5A5A 3px;
   width: 320px;
-  margin-bottom: 30px;
 }
-
-.container{
-    width: 320px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    overflow: hidden;
-    display:inline-block;
-    vertical-align:top;
+.container {
+  width: 320px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
 }
-
 .progressbar {
-    color: #fff;
-    text-align: right;
-    height: 25px;
-    width: 20px;
-    background-color: #0ba1b5;
-    border-radius: 3px;
-    -webkit-box-sizing: border-box;
-
-    transition: width 2s ease;
-    -webkit-transition: width 2s ease;
-    -o-transition: width 0s ease;
-    -moz-transition: width 0s ease;
-    -ms-transition: width 0s ease;
+  color: #fff;
+  text-align: right;
+  height: 25px;
+  width: 20px;
+  background-color: red;
+  border-radius: 3px;
+  -webkit-box-sizing: border-box;
+  transition: width 2s ease;
+  -webkit-transition: width 2s ease;
+  -o-transition: width 0s ease;
+  -moz-transition: width 0s ease;
+  -ms-transition: width 0s ease;
 }
-
 #switchButton {
   position: relative;
   width: 90px;
   margin-bottom: 20px;
 }
-
 #switchButton < .PSMswitch {
   float: left;
-    position: fixed;
-    width: 90px;
-    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+  position: fixed;
+  width: 90px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 .PSMswitch-checkbox {
-    display: none;
+  display: none;
 }
 .PSMswitch-label {
-    display: block; overflow: hidden; cursor: pointer;
-    border: 2px solid #999999; border-radius: 20px;
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #999999;
+  border-radius: 20px;
 }
 .PSMswitch-inner {
-    display: block;
-     width: 200%;
-    margin-left: -100%;
-    transition: margin 0.3s ease-in 0s;
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
 }
 .PSMswitch-inner:before, .PSMswitch-inner:after {
-    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
-    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
-    box-sizing: border-box;
+  display: block;
+  float: left;
+  width: 50%;
+  height: 30px;
+  padding: 0;
+  line-height: 30px;
+  font-size: 14px;
+  color: white;
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
+  box-sizing: border-box;
 }
 .PSMswitch-inner:before {
-    content: "ON";
-    padding-left: 10px;
-    background-color: #60D143; color: #FFFFFF;
+  content: "ON";
+  padding-left: 10px;
+  background-color: #60D143;
+  color: #FFFFFF;
 }
 .PSMswitch-inner:after {
-    content: "OFF";
-    padding-right: 10px;
-    background-color: #EEEEEE; color: #999999;
-    text-align: right;
+  content: "OFF";
+  padding-right: 10px;
+  background-color: #EEEEEE;
+  color: #999999;
+  text-align: right;
 }
 .PSMswitch-switch {
-    display: block; width: 18px; margin: 6px;
-    background: #FFFFFF;
-    position: absolute; top: 0; bottom: 0;
-    right: 56px;
-    border: 2px solid #999999; border-radius: 20px;
-    transition: all 0.3s ease-in 0s;
+  display: block;
+  width: 18px;
+  margin: 6px;
+  background: #FFFFFF;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 56px;
+  border: 2px solid #999999;
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
 }
 .PSMswitch-checkbox:checked + .PSMswitch-label .PSMswitch-inner {
-    margin-left: 0;
+  margin-left: 0;
 }
 .PSMswitch-checkbox:checked + .PSMswitch-label .PSMswitch-switch {
-    right: 0px;
+  right: 0px;
 }
-
-
-
-
-
-
-
-
-
-
-
 @keyframes bganim {
-    from {background-position:0px;} to { background-position:40px;}
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: 40px;
+  }
 }
 @-moz-keyframes bganim {
-    from {background-position:0px;} to { background-position:40px;}
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: 40px;
+  }
 }
 @-webkit-keyframes bganim {
-    from {background-position:0px;} to { background-position:40px;}
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: 40px;
+  }
 }
 @-o-keyframes bganim {
-    from {background-position:0px;} to { background-position:40px;}
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: 40px;
+  }
 }
 @-ms-keyframes bganim {
-    from {background-position:0px;} to { background-position:40px;}
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: 40px;
+  }
 }
