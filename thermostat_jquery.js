@@ -20,6 +20,7 @@
    $("#resetButton").click(function() {
      thermostat.resetTemperature();
      updateTemp();
+     localWeather();
    });
    $("#myPSMswitch").change(function() {
      thermostat.powerSavingSwitch();
@@ -36,16 +37,15 @@
      $('#temperature').text('Temperature: ' + thermostat.temperature);
      setProgress(thermostat.temperature / 32);
    }
+   function createUrl(){
 
-   $.getJSON("api.openweathermap.org/data/2.5/weather?q=London,uk", function(data) {
-     var items = [];
-     $.each(data, function(key) {
-       items.push(val);
+   }
+   function localWeather (){
+     var url = new CreateUrl('fdd78bb9d3876b77dc904e82bee2ed0b');
+     var location = url.location('London','uk');
+     $.getJSON(location, function(data){
+      var temperature = data.main.temp;
+
      });
-
-     $("<ul/>", {
-       "class": "my-new-list",
-       html: items.join("")
-     }).appendTo("body");
-   });
+   }
  });

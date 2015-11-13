@@ -4,9 +4,9 @@ describe ('Thermostat',function(){
   var thermostat;
   function doFnxTimes(fn, x){
     for (i = 1; i <= x; i++){
-      fn()
+      fn();
     }
-  };
+  }
 
   beforeEach(function() {
     thermostat = new Thermostat();
