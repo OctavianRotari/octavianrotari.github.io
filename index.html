@@ -6,7 +6,7 @@
   <title>Thermostat</title>
 </head>
 
-<body style="text-align: center">
+<body>
   <link rel="stylesheet" href="style.css">
   <script src="src/Thermostat.js"></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -26,6 +26,7 @@
   <button id="resetButton" type="button">Reset</button>
   <br>
   </div>
+  <div id='switchButton'>
   <div class="PSMswitch">
     <input type="checkbox" name="PSMswitch" class="PSMswitch-checkbox" id="myPSMswitch" checked>
     <label class="PSMswitch-label" for="myPSMswitch">
@@ -33,6 +34,12 @@
       <span class="PSMswitch-switch"></span>
     </label>
   </div>
+  </div>
+  <form>
+    <input id="city" type="text" placeholder="City name">
+    <input id="country" type="text" placeholder="County name">
+    <button id="buttonPos" type="button" name="localTemp"> Show weather </button>
+  </form>
   <div id="Local">
     <ul>
     <li id='location'></li>

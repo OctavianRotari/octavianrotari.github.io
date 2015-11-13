@@ -1,5 +1,11 @@
  $(document).ready(function() {
    var thermostat = new Thermostat();
+   var temperature;
+   var country;
+   var city;
+   var weatherdesc;
+   var setCountry;
+   updateTemp();
 
    $("#minus_button").click(function() {
      thermostat.down();
@@ -20,14 +26,24 @@
    $("#resetButton").click(function() {
      thermostat.resetTemperature();
      updateTemp();
-     localWeather();
    });
+
    $("#myPSMswitch").change(function() {
      thermostat.powerSavingSwitch();
      updateTemp();
    });
 
+   $('#buttonPos').click(function(){
+     city = $('#city').val();
+     setCountry = $('#country').val();
+     localWeather();
+   });
 
+   function displayInfoWeather () {
+     $('#location').text(country +": " + city);
+     $('#weather').text(weatherdesc);
+     $('#temp').text(Math.round(temperature-273.15) + " Celcius");
+   }
 
    function setProgress(progress) {
      var progressBarWidth = progress * $(".container").width();
@@ -39,21 +55,16 @@
      $('#temperature').text('Temperature: ' + thermostat.temperature);
      setProgress(thermostat.temperature / 32);
    }
-   function createUrl(){
 
-   }
    function localWeather (){
      var url = new CreateUrl('fdd78bb9d3876b77dc904e82bee2ed0b');
-     var location = url.location('London','uk');
+     var location = url.location( city ,setCountry);
      $.getJSON(location, function(data){
-      var temperature = data.main.temp;
-      var weatherdesc = data.weather[0].description;
-      var country = data.sys.country;
-      var city = data.name;
-      $('#location').text(country +": " + city);
-      $('#weather').text(weatherdesc);
-      $('#temp').text(Math.round(temperature-273.15) + " Celcius");
-      console.log(temperature,weatherdesc,country,city);
+      temperature = data.main.temp;
+      weatherdesc = data.weather[0].description;
+      country = data.sys.country;
+      city = data.name;
+      displayInfoWeather();
      });
    }
  });
